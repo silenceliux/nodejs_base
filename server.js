@@ -1,8 +1,12 @@
 var http = require("http");
 var fs  = require("fs");
 var events = require('events');
+var url = require("url");
 var eventEmitter = new events.EventEmitter();
 http.createServer(function(req, res){
+    var pathname = url.parse(req.url).pathname;
+    console.log(pathname);
+    route(pathname);
     res.writeHead(200,{'Content-Type':"text/plain"});
     res.end("hello world");
 }).listen(8080);
