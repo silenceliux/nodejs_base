@@ -19,6 +19,7 @@
   "homepage": "https://github.com/silenceliux/nodejs_base#readme",
   "dependencies": {
     "events": "^1.1.1",
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "node-xlsx": "^0.11.0"
   }
 }
