@@ -6,10 +6,9 @@ var eventEmitter = new events.EventEmitter();
 function start(route){
     http.createServer(function(req, res){
         var pathname = url.parse(req.url).pathname;
-        console.log("serve9"+pathname);
         route(pathname);
-        res.writeHead(200,{'Content-Type':"text/plain"});
-        res.end("hello world");
+        res.writeHead(200,{'Content-Type':"application/x-www-form-urlencoded"});
+        res.end({"router":pathname}.toString());
     }).listen(8080);
     console.log("Server has started.");
 }
